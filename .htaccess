@@ -1,0 +1,4 @@
+Options +Indexes
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)$ index.php?dir=$1 [L,QSA]
