@@ -10,7 +10,6 @@ function readFileContent($path) {
 function listDirectory($path) {
     $files = scandir($path);
     foreach ($files as $file) {
-        if ($file != "." && $file != "..") {
             $fullPath = $path . '/' . $file;
             $size = filesize($fullPath);
             $lastModified = date("F d Y H:i:s.", filemtime($fullPath));
@@ -24,7 +23,6 @@ function listDirectory($path) {
             echo "<div class=\"col-4\">";
             echo "<p>Last modified: $lastModified</p>";
             echo "</div>";
-        }
     }
 }
 ?>
